@@ -7,6 +7,7 @@ import streamlit as st
 
 class Predict:
     def __init__(self, filename):
+        st.title('What Trash Do You Have? (Recycle?)')
         self.learn_inference = load_learner(Path()/filename)
         self.img = self.get_image_from_upload()
         if self.img is not None:
@@ -27,9 +28,14 @@ class Predict:
 
         if st.button('Classify It!'):
             pred, pred_idx, probs = self.learn_inference.predict(self.img)
+            pred = pred.capitalize()
             st.write(f'Prediction: {pred}')
             percentage = probs[pred_idx]*100
             st.write(f'Probability: {percentage:.02f}%')
+            if pred != "Trash":
+                st.write('You can recycle this! Yay! Wow! So Cool!')
+            else:
+                st.write('It is just regular trash. No recycle, probably :(')
         #else: 
             #st.write(f'Click the button to classify') 
 
