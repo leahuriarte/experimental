@@ -1,9 +1,17 @@
+"remember pipreqs for requirements.txt"
+
+
 from fastai.vision.widgets import *
 from fastai.vision.all import *
 
 from pathlib import Path
 
 import streamlit as st
+import streamlit_analytics
+
+with streamlit_analytics.track():
+    st.text_input("Why Leah Is Great (Your Thoughts)")
+
 
 class Predict:
     def __init__(self, filename):
