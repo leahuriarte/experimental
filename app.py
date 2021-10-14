@@ -10,7 +10,7 @@ import streamlit as st
 import streamlit_analytics
 
 with streamlit_analytics.track():
-    st.text_input("Why Leah Is Great (Your Thoughts)")
+    st.text_input("Why Leah Is Great (Your Thoughts with Your Name Or Else)")
 
 
 class Predict:
