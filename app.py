@@ -24,7 +24,7 @@ class Predict:
             self.get_prediction()
 
         with streamlit_analytics.track():
-            st.text_input(" ",value="Say Why You Think Leah Is Great In This Text Box (Or Else) (Press Enter to Submit)")
+            st.text_input("Text Box For Thoughts",value="Say Why You Think Leah Is Great In This Text Box (Or Else) (Press Enter to Submit)")
 
         
     
