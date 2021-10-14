@@ -16,13 +16,13 @@ class Predict:
     
     @staticmethod
     def get_image_from_upload():
-        uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
+        uploaded_file = st.file_uploader("Give Me a Picture!",type=['png','jpeg', 'jpg'])
         if uploaded_file is not None:
             return PILImage.create((uploaded_file))
         return None
 
     def display_output(self):
-        st.image(self.img.to_thumb(500,500), caption='Uploaded Image')
+        st.image(self.img.to_thumb(500,500), caption='Your Image')
 
     def get_prediction(self):
 
