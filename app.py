@@ -16,7 +16,7 @@ class Predict:
     
     @staticmethod
     def get_image_from_upload():
-        uploaded_file = st.file_uploader("Give Me a Picture!",type=['png','jpeg', 'jpg'])
+        uploaded_file = st.file_uploader(label="Give Me a Picture!",type=['png','jpeg', 'jpg'])
         if uploaded_file is not None:
             return PILImage.create((uploaded_file))
         return None
