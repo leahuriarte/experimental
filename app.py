@@ -9,22 +9,29 @@ from pathlib import Path
 import streamlit as st
 import streamlit_analytics
 
-with streamlit_analytics.track():
-    st.text_input("Why Leah Is Great (Your Thoughts with Your Name Or Else)",value="Yes Yes Type Type In This Box Now and Then Press Enter")
+
 
 
 class Predict:
     def __init__(self, filename):
+
         st.title('What Trash Do You Have? (Recycle?)')
+
         self.learn_inference = load_learner(Path()/filename)
         self.img = self.get_image_from_upload()
         if self.img is not None:
             self.display_output()
             self.get_prediction()
+
+        with st.expander("Give Thoughts Now"):
+            with streamlit_analytics.track():
+                st.text_input(" ",value="Say Why You Think Leah Is Great In This Text Box (Or Else) (Press Enter to Submit)")
+
+        
     
     @staticmethod
     def get_image_from_upload():
-        uploaded_file = st.file_uploader("Upload File",type=['png','jpeg', 'jpg'])
+        uploaded_file = st.file_uploader("Submit Your Photo Below",type=['png','jpeg', 'jpg'])
         if uploaded_file is not None:
             return PILImage.create((uploaded_file))
         return None
