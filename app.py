@@ -23,9 +23,8 @@ class Predict:
             self.display_output()
             self.get_prediction()
 
-        with st.expander("Give Thoughts Now"):
-            with streamlit_analytics.track():
-                st.text_input(" ",value="Say Why You Think Leah Is Great In This Text Box (Or Else) (Press Enter to Submit)")
+        with streamlit_analytics.track():
+            st.text_input(" ",value="Say Why You Think Leah Is Great In This Text Box (Or Else) (Press Enter to Submit)")
 
         
     
