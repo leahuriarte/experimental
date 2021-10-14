@@ -31,7 +31,7 @@ class Predict:
             pred = pred.capitalize()
             st.write(f'My Prediction: {pred}')
             percentage = probs[pred_idx]*100
-            st.write(f"Probability that I'm Correct": {percentage:.02f}%')
+            st.write(f"Probability that I'm Correct: {percentage:.02f}%")
             if pred != "Trash":
                 st.write('You can recycle this! Yay! Wow! So Cool!')
             else:
