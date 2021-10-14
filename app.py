@@ -16,7 +16,7 @@ class Predict:
     
     @staticmethod
     def get_image_from_upload():
-        uploaded_file = st.file_uploader(label="Give Me a Picture!",type=['png','jpeg', 'jpg'])
+        uploaded_file = st.file_uploader(type=['png','jpeg', 'jpg'])
         if uploaded_file is not None:
             return PILImage.create((uploaded_file))
         return None
@@ -29,9 +29,9 @@ class Predict:
         if st.button('Classify It!'):
             pred, pred_idx, probs = self.learn_inference.predict(self.img)
             pred = pred.capitalize()
-            st.write(f'Prediction: {pred}')
+            st.write(f'My Prediction: {pred}')
             percentage = probs[pred_idx]*100
-            st.write(f'Probability: {percentage:.02f}%')
+            st.write(f"Probability that I'm Correct": {percentage:.02f}%')
             if pred != "Trash":
                 st.write('You can recycle this! Yay! Wow! So Cool!')
             else:
