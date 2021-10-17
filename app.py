@@ -9,8 +9,8 @@ from pathlib import Path
 import streamlit as st
 import streamlit_analytics
 
-
-
+import gc
+gc.enable()
 
 class Predict:
     def __init__(self, filename):
@@ -58,3 +58,5 @@ if __name__=='__main__':
     file_name='recycling.pkl'
 
     predictor = Predict(file_name)
+
+    gc.collect()
